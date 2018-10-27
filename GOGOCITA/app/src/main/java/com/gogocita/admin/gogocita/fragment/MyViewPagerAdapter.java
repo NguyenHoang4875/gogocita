@@ -1,15 +1,17 @@
-package android.thaihn.viewpagerstate;
+package com.gogocita.admin.gogocita.fragment;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.thaihn.viewpagerstate.fragment.ContactFragment;
-import android.thaihn.viewpagerstate.fragment.HomeFragment;
-import android.thaihn.viewpagerstate.fragment.SettingFragment;
+
+import com.gogocita.admin.gogocita.fragment.TabFragment1;
+import com.gogocita.admin.gogocita.fragment.TabFragment2;
+import com.gogocita.admin.gogocita.fragment.TabFragment3;
+import com.gogocita.admin.gogocita.fragment.TabFragment4;
 
 public class MyViewPagerAdapter extends FragmentPagerAdapter {
-    public static final int NUM_PAGER = 3;
+    public static final int NUM_PAGER = 4;
 
     public MyViewPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -19,16 +21,24 @@ public class MyViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return HomeFragment.newInstance(0, "HOME");
+                TabFragment1 tab1 = new TabFragment1();
+                return tab1;
 
             case 1:
-                return ContactFragment.newInstance(1, "CONTACT");
+                TabFragment2 tab2 = new TabFragment2();
+                return tab2;
 
             case 2:
-                return SettingFragment.newInstance(2, "SETTINGS");
+                TabFragment3 tab3 = new TabFragment3();
+                return tab3;
+
+            case 3:
+                TabFragment4 tab4 = new TabFragment4();
+                return tab4;
 
             default:
-                return HomeFragment.newInstance(0, "HOME");
+                tab1 = new TabFragment1();
+                return tab1;
 
         }
     }
@@ -46,8 +56,10 @@ public class MyViewPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return "HOME";
             case 1:
-                return "CONTACT";
+                return "SERVICE";
             case 2:
+                return "PROFILE";
+            case 3:
                 return "SETTING";
             default:
                 return "HOME";

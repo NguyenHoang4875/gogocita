@@ -1,12 +1,7 @@
-package android.thaihn.viewpagerstate;
+package com.gogocita.admin.gogocita.fragment;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;
-
-/**
- * Created by Thaihn on 12/6/2017.
- */
-
 public class DepthPageTransformer implements ViewPager.PageTransformer {
     private static final float MIN_SCALE = 0.75f;
 
